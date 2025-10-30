@@ -57,6 +57,7 @@ Snacks.setup({
 					"**/target/*",
 					"**/public/*",
 					"**/digest*.txt",
+					"**/.node-gyp/**",
 				},
 			},
 			grep = {
@@ -90,6 +91,7 @@ Snacks.setup({
 					"**/target/*",
 					"**/public/*",
 					"**/digest*.txt",
+					"**/.node-gyp/**",
 				},
 			},
 			grep_buffers = {},
@@ -116,6 +118,7 @@ Snacks.setup({
 					".pnpm-store",
 					".venv",
 					".DS_Store",
+					"**/.node-gyp/**",
 				},
 			},
 		},
