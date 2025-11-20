@@ -1,4 +1,3 @@
-require("plugins.ai")
 require("plugins.blink")
 require("plugins.catppuccin")
 require("plugins.conform")
