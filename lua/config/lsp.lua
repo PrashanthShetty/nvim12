@@ -64,7 +64,7 @@ vim.lsp.enable({
 	"helm_ls",
 	"biome",
 	-- "yamlls",
-	-- "jsonls",
+	"jsonls",
 	-- "oxlint",
 	-- "pyright",
 	-- "tailwindcss",
