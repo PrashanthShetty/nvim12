@@ -62,12 +62,9 @@ vim.lsp.enable({
 	"cssls",
 	"html",
 	"helm_ls",
+	"jsonls",
 	"biome",
 	-- "yamlls",
-	"jsonls",
-	-- "oxlint",
-	-- "pyright",
-	-- "tailwindcss",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default

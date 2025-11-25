@@ -1,11 +1,3 @@
----@brief
----
---- https://github.com/golang/tools/tree/master/gopls
----
---- Google's lsp server for golang.
-
---- @class go_dir_custom_args
-
 local mod_cache = nil
 local std_lib = nil
 
@@ -88,7 +80,6 @@ return {
 		local fname = vim.api.nvim_buf_get_name(bufnr)
 		get_mod_cache_dir()
 		get_std_lib_dir()
-		-- see: https://github.com/neovim/nvim-lspconfig/issues/804
 		on_dir(get_root_dir(fname))
 	end,
 }

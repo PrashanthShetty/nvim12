@@ -1,9 +1,12 @@
+-- Install with: npm i -g add yaml-language-server
+
+---@type vim.lsp.Config
 return {
 	cmd = { "yaml-language-server", "--stdio" },
-	filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" },
-	root_markers = { ".git" },
+	filetypes = { "yaml" },
 	settings = {
-		-- https://github.com/redhat-developer/vscode-redhat-telemetry#how-to-disable-telemetry-reporting
-		redhat = { telemetry = { enabled = false } },
+		yaml = {
+			schemastore = { enable = false, url = "" },
+		},
 	},
 }

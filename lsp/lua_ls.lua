@@ -1,39 +1,28 @@
+-- mac: brew install lua-language-server
+
+---@type vim.lsp.Config
 return {
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
-	root_markers = {
-		".luarc.json",
-		".luarc.jsonc",
-		".stylua.toml",
-		"stylua.toml",
-		".git",
-		"lua/",
-	},
-	single_file_support = true,
+	root_markers = { ".luarc.json", ".luarc.jsonc" },
 	settings = {
 		Lua = {
+			completion = { callSnippet = "Replace" },
+			-- Using stylua for formatting.
+			format = { enable = false },
+			hint = {
+				enable = true,
+				arrayIndex = "Disable",
+			},
 			runtime = {
 				version = "LuaJIT",
 			},
-			diagnostics = {
-				globals = {
-					"vim",
-					"Snacks",
-					"Lazy",
-				},
-			},
 			workspace = {
+				checkThirdParty = false,
 				library = {
 					vim.env.VIMRUNTIME,
 					"${3rd}/luv/library",
 				},
-				checkThirdParty = false,
-			},
-			telemetry = {
-				enable = false,
-			},
-			format = {
-				enable = false, -- Use stylua via conform instead
 			},
 		},
 	},
