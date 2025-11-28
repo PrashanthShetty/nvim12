@@ -1,4 +1,4 @@
-# Modern Neovim Config
+# My Neovim config
 
 > Fast, IDE-grade Neovim setup with 20 plugins using native `vim.pack` (no plugin manager needed)
 
@@ -9,27 +9,26 @@
 - Sub-50ms startup using native `vim.pack` (no lazy.nvim/packer overhead)
 - Custom UI components (statusline, bufferline, session manager) without extra plugins
 - 15+ LSP servers pre-configured with format-on-save
-- Session persistence that restores your exact workspace
-- Smart plugin choices - each replaces multiple alternatives
+- Session persistence that restores your workspace as VSCode
 
 ## Core Plugins
 
-| Plugin               | Purpose                                            | Replaces            |
-| -------------------- | -------------------------------------------------- | ------------------- |
-| snacks.nvim          | Terminal, git, notifier, dashboard, scroll, indent | 10+ plugins         |
-| blink.cmp            | Completion with LSP, snippets, fuzzy matching      | nvim-cmp + deps     |
-| treesitter           | Syntax highlighting, text objects, navigation      | —                   |
-| gitsigns.nvim        | Git signs, blame, diff integration                 | —                   |
-| grug-far.nvim        | Search & replace UI                                | telescope + spectre |
-| which-key.nvim       | Command palette & keybind helper                   | —                   |
-| conform.nvim         | Auto-formatting (50+ formatters)                   | —                   |
-| noice.nvim           | Modern UI for messages/cmdline                     | —                   |
-| flash.nvim           | Jump navigation                                    | hop/leap            |
-| yanky.nvim           | Yank history with smart paste                      | —                   |
-| render-markdown.nvim | Beautiful in-buffer markdown rendering             | —                   |
-| diffview.nvim        | Git diff and merge tool                            | —                   |
-| catppuccin           | Colorscheme                                        | —                   |
-| nvim-dap             | Debugging with virtual text & UI                   | —                   |
+| Plugin               | Purpose                                                                      |
+| -------------------- | ---------------------------------------------------------------------------- |
+| snacks.nvim          | Picker, Explorer, Terminal, git, notifier, dashboard, scroll, indent, ...etc |
+| blink.cmp            | Completion with LSP, snippets, fuzzy matching                                |
+| treesitter           | Syntax highlighting, text objects, navigation                                |
+| gitsigns.nvim        | Git signs, blame, diff integration                                           |
+| grug-far.nvim        | Search & replace UI                                                          |
+| which-key.nvim       | Command palette & keybind helper                                             |
+| conform.nvim         | Auto-formatting (50+ formatters)                                             |
+| noice.nvim           | Modern UI for messages/cmdline                                               |
+| flash.nvim           | Jump navigation                                                              |
+| yanky.nvim           | Yank history with smart paste                                                |
+| render-markdown.nvim | Beautiful in-buffer markdown rendering                                       |
+| diffview.nvim        | Git diff and merge tool                                                      |
+| catppuccin           | Colorscheme                                                                  |
+| nvim-dap             | Debugging with virtual text & UI                                             |
 
 ## Custom features (no plugins required)
 
@@ -37,6 +36,8 @@
 - Custom bufferline - Smart buffer management with devicons
 - Session manager - Per-directory auto-save/restore
 - LSP utilities - Unified setup helpers
+
+I also wrote a series of articles about my [Neovim config](https://tduyng.com/tags/neovim/)
 
 ## Installation
 
@@ -59,7 +60,7 @@ Update plugins: `<leader>pu` or `:lua vim.pack.update()`
 
 Leader key: `Space`
 
-### Essential Keybindings
+### Essential keybindings
 
 ```
 Files & Search
@@ -106,7 +107,7 @@ Debug (DAP)
   <leader>do   Step over
 ```
 
-A lot of keymaps as in [Lazyvim/keymaps](https://www.lazyvim.org/keymaps)
+A lot of keymaps as in [Lazyvim/keymaps](https://www.lazyvim.org/keymaps).
 
 ## Screenshots
 
