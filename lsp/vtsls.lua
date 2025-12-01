@@ -1,4 +1,7 @@
 -- Usage: npm install -g @vtsls/language-server
+
+local ROOT_MARKERS = { "tsconfig.json", "jsconfig.json", "package.json", ".git" }
+
 return {
 	cmd = { "vtsls", "--stdio" },
 	filetypes = {
@@ -9,7 +12,28 @@ return {
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	root_markers = { "tsconfig.json", "package.json", "jsconfig.json", ".git" },
+	root_dir = function(bufnr, on_dir)
+		local fname = vim.api.nvim_buf_get_name(bufnr)
+		local filetype = vim.bo[bufnr].filetype
+
+		local valid_filetypes = {
+			javascript = true,
+			javascriptreact = true,
+			["javascript.jsx"] = true,
+			typescript = true,
+			typescriptreact = true,
+			["typescript.tsx"] = true,
+		}
+
+		if not valid_filetypes[filetype] then
+			on_dir(nil)
+			return
+		end
+
+		-- Find workspace root
+		local workspace_root = vim.fs.dirname(vim.fs.find(ROOT_MARKERS, { path = fname, upward = true })[1])
+		on_dir(workspace_root or vim.fn.getcwd())
+	end,
 	settings = {
 		complete_function_calls = true,
 		vtsls = {
