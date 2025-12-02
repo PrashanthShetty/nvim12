@@ -1,9 +1,24 @@
--- Usage: npm install -g @vtsls/language-server
-
 local ROOT_MARKERS = { "tsconfig.json", "jsconfig.json", "package.json", ".git" }
 
+-- Check if current node version is >= 20
+local function get_vtsls_cmd()
+	local handle = io.popen("node --version 2>/dev/null")
+	if handle then
+		local version = handle:read("*l")
+		handle:close()
+		if version then
+			local major = tonumber(version:match("^v?(%d+)"))
+			if major and major >= 20 then
+				return { "vtsls", "--stdio" }
+			end
+		end
+	end
+	-- Node < 20 or not found, use fnm with Node 24
+	return { "fnm", "exec", "--using=24", "vtsls", "--stdio" }
+end
+
 return {
-	cmd = { "vtsls", "--stdio" },
+	cmd = get_vtsls_cmd(),
 	filetypes = {
 		"javascript",
 		"javascriptreact",
