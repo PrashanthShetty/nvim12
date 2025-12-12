@@ -22,6 +22,22 @@ local function get_icon(filename, name)
 	return icon and (icon .. " ") or ""
 end
 
+-- Extract parent folders + filename (e.g., "parent/config/tabline.lua")
+local function get_display_name(path)
+	if path == "" then
+		return NO_NAME
+	end
+	local parts = vim.split(path, "/", { plain = true })
+	if #parts == 1 then
+		return parts[1] -- Just filename if no parent
+	elseif #parts == 2 then
+		return parts[#parts - 1] .. "/" .. parts[#parts] -- parent/filename
+	else
+		-- Return "grandparent/parent/filename" (last 3 parts)
+		return parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
+	end
+end
+
 -- Render a single buffer chunk
 local function render_buf(bufnr, current)
 	if not vim.api.nvim_buf_is_loaded(bufnr) then
@@ -32,9 +48,10 @@ local function render_buf(bufnr, current)
 	end
 
 	local name = vim.api.nvim_buf_get_name(bufnr)
+	local display_name = get_display_name(name)
 	local filename = (name ~= "" and vim.fn.fnamemodify(name, ":t")) or NO_NAME
 	local icon = get_icon(filename, name)
-	local content = icon .. filename
+	local content = icon .. display_name
 
 	if bufnr == current then
 		return table.concat({
