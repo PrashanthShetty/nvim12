@@ -215,7 +215,7 @@ map("i", '"', '""<left>')
 map("i", "(", "()<left>")
 map("i", "[", "[]<left>")
 map("i", "{", "{}<left>")
-map("i", "<", "<><left>")
+-- map("i", "<", "<><left>")
 
 -- vim.pack keymaps
 map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")

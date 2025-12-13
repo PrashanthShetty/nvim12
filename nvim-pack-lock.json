@@ -6,7 +6,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "ffe26e8df8115c9665d24231f8a49fadb2d611ce",
+      "rev": "41715945edf518ca73a9bd63ab6cdc23dd5c7b33",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "diffview.nvim": {
@@ -18,7 +18,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grug-far.nvim": {
-      "rev": "b58b2d65863f4ebad88b10a1ddd519e5380466e0",
+      "rev": "bc589a1ba340a00ae40bf1436401eac5b1454687",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
     "markdown-preview.nvim": {
