@@ -6,7 +6,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "41715945edf518ca73a9bd63ab6cdc23dd5c7b33",
+      "rev": "94e6811242a3a2cbf4459863cc4ef4cfe9fa6aaf",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "diffview.nvim": {
@@ -55,12 +55,12 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "2979e048b356cfd32dc419d5803dc356b9832adf",
+      "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "76deedf0f1cec4496ef8d49b6d1f020f6d0c6ec9",
+      "rev": "e91c585ac0ee760198dabc1fad2e6227effdcd5e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
