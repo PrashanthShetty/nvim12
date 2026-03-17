@@ -27,7 +27,7 @@ return {
 		if vim.fn.executable(cmd) == 0 then
 			cmd = "oxc_language_server"
 		end
-		return vim.lsp.rpc.start({ cmd, "--lsp", "--import-plugin" }, dispatchers)
+		return vim.lsp.rpc.start({ cmd, "--lsp", "--import-plugin", "--type-aware" }, dispatchers)
 	end,
 	filetypes = {
 		"javascript",

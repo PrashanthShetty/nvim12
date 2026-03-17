@@ -274,10 +274,10 @@ local function apply_custom_highlights()
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 
 		-- [11] Diff & Git (Fixes vdiff issues)
-		DiffAdd = { bg = "#2d3326", fg = colors.none },
-		DiffChange = { bg = "#2d2a2e", fg = colors.none },
-		DiffDelete = { bg = "#332626", fg = colors.none },
-		DiffText = { bg = "#263033", fg = colors.none },
+		DiffAdd = { bg = "#374a2f", fg = colors.none },
+		DiffChange = { bg = "#2e3a4a", fg = colors.none },
+		DiffDelete = { bg = "#4a2f2f", fg = colors.red },
+		DiffText = { bg = "#3a5060", fg = colors.none },
 		diffAdded = { fg = colors.green },
 		diffRemoved = { fg = colors.red },
 		diffChanged = { fg = colors.blue },
