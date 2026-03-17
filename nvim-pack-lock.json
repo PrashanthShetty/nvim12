@@ -7,7 +7,7 @@
     },
     "codeme.nvim": {
       "rev": "7c96609c91103b4f44f568a76822cd7b4ef42653",
-      "src": "~/projects/oss/git/codememono/codeme.nvim"
+      "src": "/Users/tien-duy.nguyen/projects/oss/git/codememono/codeme.nvim"
     },
     "conform.nvim": {
       "rev": "40dcec5555f960b0a04340d76eabdf4efe78599d",
@@ -55,12 +55,12 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "ebe76eb800d4e8df754fc96f8a7b84f578224a97",
+      "rev": "875515255192864c33981c3ed66ad94e561b904a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "0bc4ef0a34d80fd6e67b59bd71fcbb0ef9ef4756",
+      "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
@@ -73,12 +73,12 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {
-      "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "vdiff.nvim": {
       "rev": "d354be7ee27bbcbc2e7d249139783c698577e456",
-      "src": "~/projects/oss/git/nixhub/apps/vdiff.nvim"
+      "src": "/Users/tien-duy.nguyen/projects/oss/git/nixhub/apps/vdiff.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

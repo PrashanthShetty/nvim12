@@ -1,5 +1,5 @@
 vim.pack.add({
-	{ src = "~/projects/oss/git/codememono/codeme.nvim" },
+	{ src = vim.fn.expand("~/projects/oss/git/codememono/codeme.nvim") },
 })
 
 require("codeme").setup({
