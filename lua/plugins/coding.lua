@@ -1,5 +1,5 @@
 vim.pack.add({
-	{ src = vim.fn.expand("~/projects/oss/git/codememono/codeme.nvim") },
+	"https://github.com/tduyng/codeme.nvim",
 })
 
 require("codeme").setup({
@@ -10,8 +10,8 @@ require("codeme").setup({
 		},
 		-- Hides existing data from the UI immediately
 		dashboard = {
-			projects = { "hodor*", "urba*", "whitelabel*" },
-			files = { "hodor*", "urba*", "whitelabel*" },
+			projects = {},
+			files = {},
 			languages = { "gitignore", "gitconfig", "sshconfig" },
 		},
 	},

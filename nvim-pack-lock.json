@@ -6,8 +6,8 @@
       "version": "1.0.0 - 2.0.0"
     },
     "codeme.nvim": {
-      "rev": "7c96609c91103b4f44f568a76822cd7b4ef42653",
-      "src": "/Users/tien-duy.nguyen/projects/oss/git/codememono/codeme.nvim"
+      "rev": "4a4add6c3d7ad1efc92ddc0a5d9083b2bdd07932",
+      "src": "https://github.com/tduyng/codeme.nvim"
     },
     "conform.nvim": {
       "rev": "40dcec5555f960b0a04340d76eabdf4efe78599d",
@@ -18,7 +18,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3",
+      "rev": "0f00d07c2c3106ba6abd594ac1c17f211141b7b5",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grug-far.nvim": {
@@ -43,7 +43,7 @@
       "version": "'b516f20b487b0ac6a281e376dfac1d16b5040041'"
     },
     "nvim-dap-ui": {
-      "rev": "cf91d5e2d07c72903d052f5207511bf7ecdb7122",
+      "rev": "f5b6673f374626515401c5bc51b005f784a4f252",
       "src": "https://github.com/rcarriga/nvim-dap-ui"
     },
     "nvim-dap-virtual-text": {
@@ -55,7 +55,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "875515255192864c33981c3ed66ad94e561b904a",
+      "rev": "c82bf96f0a773d85304feeb695e1e23b2207ac35",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -69,7 +69,7 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "render-markdown.nvim": {
-      "rev": "907505549edc2f90c82fc429348af03ee8c3a825",
+      "rev": "c7188a8f9d2953696b6303caccbf39c51fa2c1b1",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {
@@ -77,8 +77,8 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "vdiff.nvim": {
-      "rev": "d354be7ee27bbcbc2e7d249139783c698577e456",
-      "src": "/Users/tien-duy.nguyen/projects/oss/git/nixhub/apps/vdiff.nvim"
+      "rev": "007fe5149e7defd42ae20abc9df676a2c85cd3f3",
+      "src": "https://github.com/tduyng/vdiff.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
