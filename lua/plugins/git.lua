@@ -1,6 +1,6 @@
 vim.pack.add({
 	"https://github.com/lewis6991/gitsigns.nvim",
-	"https://github.com/tduyng/vdiff.nvim",
+	"https://gitlab.com/tduyng/vdiff.nvim",
 })
 
 -- Setup gitsigns.nvim

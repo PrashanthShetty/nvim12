@@ -46,7 +46,7 @@ I also wrote a series of articles about my [Neovim config](https://tduyng.com/ta
 mv ~/.config/nvim ~/.config/nvim.bak
 
 # Clone
-git clone https://github.com/tduyng/nvim.git ~/.config/nvim
+git clone https://gitlab.com/tduyng/nvim.git ~/.config/nvim
 
 # Launch (plugins install automatically)
 nvim

@@ -6,8 +6,8 @@
       "version": "1.0.0 - 2.0.0"
     },
     "codeme.nvim": {
-      "rev": "4a4add6c3d7ad1efc92ddc0a5d9083b2bdd07932",
-      "src": "https://github.com/tduyng/codeme.nvim"
+      "rev": "d266b66fd4b0bfff6edf9ea019a1c1bf7fa6a5b6",
+      "src": "https://gitlab.com/tduyng/codeme.nvim"
     },
     "conform.nvim": {
       "rev": "40dcec5555f960b0a04340d76eabdf4efe78599d",
@@ -77,8 +77,8 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "vdiff.nvim": {
-      "rev": "007fe5149e7defd42ae20abc9df676a2c85cd3f3",
-      "src": "https://github.com/tduyng/vdiff.nvim"
+      "rev": "96e52d8c12bb9cc16876dafa9c4217b36fbc440e",
+      "src": "https://gitlab.com/tduyng/vdiff.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

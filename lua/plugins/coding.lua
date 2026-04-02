@@ -1,5 +1,5 @@
 vim.pack.add({
-	"https://github.com/tduyng/codeme.nvim",
+	"https://gitlab.com/tduyng/codeme.nvim",
 })
 
 require("codeme").setup({
