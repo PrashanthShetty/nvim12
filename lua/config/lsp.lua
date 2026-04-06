@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			end
 
 			if client:supports_method("textDocument/documentColor") then
-				vim.lsp.document_color.enable(true, buf, {
+				vim.lsp.document_color.enable(true, { bufnr = buf }, {
 					style = "virtual",
 				})
 			end
