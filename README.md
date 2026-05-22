@@ -1,4 +1,4 @@
-# Credit: [Duy NG](!https://github.com/tduyng)
+# Credit: [Duy NG](https://tduyng.com/)
 # My Neovim config
 
 > Fast, IDE-grade Neovim setup with 20 plugins using native `vim.pack` (no plugin manager needed)
