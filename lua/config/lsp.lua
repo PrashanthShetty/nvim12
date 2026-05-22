@@ -3,6 +3,25 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
 end
 
+local function hoverDoc()
+	local accent = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" })
+	vim.api.nvim_set_hl(0, "HoverBorder", { fg = accent.fg })
+	vim.lsp.buf.hover({
+		border = {
+			{ "╭", "HoverBorder" },
+			{ "─", "HoverBorder" },
+			{ "╮", "HoverBorder" },
+			{ "│", "HoverBorder" },
+			{ "╯", "HoverBorder" },
+			{ "─", "HoverBorder" },
+			{ "╰", "HoverBorder" },
+			{ "│", "HoverBorder" },
+		},
+		max_width = math.floor(vim.o.columns * 0.4),
+		max_height = math.floor(vim.o.lines * 0.4),
+	})
+end
+
 local default_keymaps = {
 	{ keys = "<leader>ca", func = vim.lsp.buf.code_action, desc = "Code Actions" },
 	{
@@ -22,8 +41,18 @@ local default_keymaps = {
 		desc = "LSP Fix All",
 	},
 	{ keys = "<leader>cr", func = vim.lsp.buf.rename, desc = "Code Rename" },
-	{ keys = "<leader>k", func = vim.lsp.buf.hover, desc = "Hover Documentation", has = "hoverProvider" },
-	{ keys = "K", func = vim.lsp.buf.hover, desc = "Hover (alt)", has = "hoverProvider" },
+	{
+		keys = "<leader>k",
+		func = hoverDoc,
+		desc = "Hover Documentation",
+		has = "hoverProvider",
+	},
+	{
+		keys = "K",
+		func = hoverDoc,
+		desc = "Hover (alt)",
+		has = "hoverProvider",
+	},
 	{ keys = "gd", func = vim.lsp.buf.definition, desc = "Goto Definition", has = "definitionProvider" },
 }
 
@@ -89,7 +118,7 @@ vim.lsp.enable({
 	"eslint", -- Fallback linter
 	"lua_ls",
 	"gopls",
-	"rust_analyser",
+	-- "rust_analyser",
 	"zls",
 	-- "cssls",
 	-- "html",

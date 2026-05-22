@@ -4,7 +4,14 @@ vim.pack.add({
 
 local wk = require("which-key")
 wk.setup({
-	preset = "helix",
+	preset = "classic",
+    delay = function(ctx)
+      return ctx.plugin and 0 or 500
+    end,
+    win = {
+      border = "rounded", -- none, single, double, shadow
+    },
+   
 })
 wk.add({
 	{ "<leader><tab>", group = "tabs" },
@@ -18,6 +25,7 @@ wk.add({
 	{ "<leader>gh", group = "hunks" },
 	{ "<leader>q", group = "quit/session" },
 	{ "<leader>s", group = "search" },
+    {"<leader>t", name = "Testing", icon = { icon = "" }},
 	{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
 	{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
 	{ "[", group = "prev" },

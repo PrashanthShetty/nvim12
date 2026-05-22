@@ -82,4 +82,41 @@ return {
 		get_std_lib_dir()
 		on_dir(get_root_dir(fname))
 	end,
+	settings = {
+		gopls = {
+			codelenses = {
+				gc_details = true,
+				generate = false,
+				regenerate_cgo = true,
+				run_govulncheck = true,
+				test = true,
+				tidy = true,
+				upgrade_dependency = true,
+				vendor = true,
+			},
+			hints = {
+				assignVariableTypes = false,
+				compositeLiteralFields = false,
+				compositeLiteralTypes = false,
+				constantValues = false,
+				functionTypeParameters = false,
+				parameterNames = false,
+				rangeVariableTypes = false,
+			},
+			analyses = {
+				fieldalignment = true,
+				nilness = true,
+				unusedparams = true,
+				unusedwrite = true,
+				useany = true,
+			},
+			buildFlags = { "-tags=unit restapi mysqllib integration" },
+			gofumpt = false,
+			usePlaceholders = true,
+			completeUnimported = true,
+			staticcheck = true,
+			directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+			semanticTokens = true,
+		},
+	},
 }

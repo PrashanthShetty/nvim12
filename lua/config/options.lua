@@ -8,9 +8,9 @@ opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
 
 -- Indentation
-opt.tabstop = 2 -- Tab width
-opt.shiftwidth = 2 -- Indent width
-opt.softtabstop = 2 -- Soft tab stop
+opt.tabstop = 4 -- Tab width
+opt.shiftwidth = 4 -- Indent width
+opt.softtabstop = 4 -- Soft tab stop
 opt.expandtab = true -- Use spaces instead of tabs
 opt.smartindent = true -- Smart auto-indenting
 opt.autoindent = true -- Copy indent from current line
@@ -113,7 +113,7 @@ opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
 opt.list = false -- Show some invisible characters (tabs...)
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
+-- opt.shiftwidth = 2 -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.g.markdown_recommended_style = 0
 

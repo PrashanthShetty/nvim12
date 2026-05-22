@@ -30,9 +30,46 @@ Snacks.setup({
 			vim.b[ctx.buf].snacks_indent = false
 		end,
 	},
-	dashboard = { enabled = false },
+	dashboard = {
+		enabled = true,
+		preset = {
+			keys = {
+				{ icon = "󰍉 ", key = "f", desc = "Find File", action = ":lua Snacks.picker.files()" },
+				{ icon = "󰝒 ", key = "n", desc = "New File", action = ":ene | startinsert" },
+				{ icon = "󰺮 ", key = "g", desc = "Find Text", action = ":lua Snacks.picker.grep()" },
+				{ icon = "󱋡 ", key = "r", desc = "Recent Files", action = ":lua Snacks.picker.recent()" },
+				{
+					icon = "󰒓 ",
+					key = "c",
+					desc = "Config",
+					action = ":lua Snacks.picker.files({ cwd = vim.fn.stdpath('config') })",
+				},
+				{
+					icon = "󰦛 ",
+					key = "s",
+					desc = "Restore Session",
+					action = function()
+						require("persistence").load()
+					end,
+				},
+				{ icon = "󰌌 ", key = "k", desc = "Keymaps", action = ":lua Snacks.picker.keymaps()" },
+				{ icon = "󰈆 ", key = "q", desc = "Quit", action = ":qa" },
+			},
+			header = [[
+  ____  ____  _   _ _____  _____ _______   __
+ |  _ \/ ___|| | | | ____||_   _|_   _\ \ / /
+ | |_) \___ \| |_| |  _|    | |   | |  \ V / 
+ |  __/ ___) |  _  | |___   | |   | |   | |  
+ |_|   |____/|_| |_|_____|  |_|   |_|   |_|  
+ ]],
+		},
+		sections = {
+			{ section = "header" },
+			{ section = "keys", gap = 1, padding = 1 },
+		},
+	},
 	dim = { enabled = true },
-	explorer = { enabled = true, replace_netrw = true },
+	explorer = { enabled = true, replace_netrw = true, hidden = false, ignored = false },
 	image = { enabled = true },
 	indent = { enabled = true },
 	input = { enabled = true },
@@ -65,6 +102,9 @@ Snacks.setup({
 				},
 				exclude = {
 					"**/.git/*",
+					"**/.gitlab/*",
+					"**/.vscode/*",
+					"**/.zed/*",
 					"**/node_modules/*",
 					"**/.yarn/cache/*",
 					"**/.yarn/install*",
@@ -158,7 +198,10 @@ Snacks.setup({
 				tree = true,
 				watch = true,
 				exclude = {
-					-- ".git",
+					".git",
+					".gitlab",
+					".zed",
+					".vscode",
 					".yarn/cache/**",
 					".yarn/install/**",
 					".yarn/install*",

@@ -17,6 +17,17 @@ require("noice").setup({
 			["vim.lsp.util.stylize_markdown"] = true,
 			["cmp.entry.get_documentation"] = true,
 		},
+		hover = {
+			enabled = true,
+			opts = {
+				border = {
+					style = "rounded",
+					padding = { 0, 1 },
+				},
+				max_width = math.floor(vim.o.columns * 0.4),
+				max_height = math.floor(vim.o.lines * 0.4),
+			},
+		},
 	},
 	routes = {
 		{
