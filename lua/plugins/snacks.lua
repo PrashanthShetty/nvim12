@@ -56,12 +56,15 @@ Snacks.setup({
 				{ icon = "󰈆 ", key = "q", desc = "Quit", action = ":qa" },
 			},
 			header = [[
-  ____  ____  _   _ _____  _____ _______   __
- |  _ \/ ___|| | | | ____||_   _|_   _\ \ / /
- | |_) \___ \| |_| |  _|    | |   | |  \ V / 
- |  __/ ___) |  _  | |___   | |   | |   | |  
- |_|   |____/|_| |_|_____|  |_|   |_|   |_|  
- ]],
+                pshetty                                                
+       ████ ██████           █████      ██                     
+      ███████████             █████                             
+      █████████ ███████████████████ ███   ███████████   
+     █████████  ███    █████████████ █████ ██████████████   
+    █████████ ██████████ █████████ █████ █████ ████ █████   
+  ███████████ ███    ███ █████████ █████ █████ ████ █████  
+ ██████  █████████████████████ ████ █████ █████ ████ ██████ 
+        ]],
 		},
 		sections = {
 			{ section = "header" },
@@ -71,7 +74,11 @@ Snacks.setup({
 	dim = { enabled = true },
 	explorer = { enabled = true, replace_netrw = true, hidden = false, ignored = false },
 	image = { enabled = true },
-	indent = { enabled = true },
+	indent = {
+		enabled = true,
+		animate = { enabled = true },
+		blank = " ",
+	},
 	input = { enabled = true },
 	layout = { enabled = true },
 	notifier = { enabled = true },

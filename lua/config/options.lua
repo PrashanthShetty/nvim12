@@ -75,6 +75,17 @@ opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.formatoptions = "jqlnt"
+vim.opt.foldtext = ""
+
+-- vim.opt.foldtext = function()
+-- 	local line = vim.fn.getline(vim.v.foldstart)
+-- 	local count = vim.v.foldend - vim.v.foldstart + 1
+-- 	return line .. "  ⋯  " .. count .. " lines"
+-- end
+
 -- Split behavior
 opt.splitbelow = true -- Horizontal splits go below
 opt.splitright = true -- Vertical splits go right
@@ -119,6 +130,7 @@ vim.g.markdown_recommended_style = 0
 
 vim.filetype.add({
 	extension = {
+		go = "go",
 		env = "dotenv",
 		txt = "markdown",
 	},

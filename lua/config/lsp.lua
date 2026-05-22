@@ -4,19 +4,9 @@ local function augroup(name)
 end
 
 local function hoverDoc()
-	local accent = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" })
-	vim.api.nvim_set_hl(0, "HoverBorder", { fg = accent.fg })
+	-- local accent = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" })
+	-- vim.api.nvim_set_hl(0, "HoverBorder", { fg = accent.fg })
 	vim.lsp.buf.hover({
-		border = {
-			{ "╭", "HoverBorder" },
-			{ "─", "HoverBorder" },
-			{ "╮", "HoverBorder" },
-			{ "│", "HoverBorder" },
-			{ "╯", "HoverBorder" },
-			{ "─", "HoverBorder" },
-			{ "╰", "HoverBorder" },
-			{ "│", "HoverBorder" },
-		},
 		max_width = math.floor(vim.o.columns * 0.4),
 		max_height = math.floor(vim.o.lines * 0.4),
 	})
