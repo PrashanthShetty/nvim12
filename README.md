@@ -1,3 +1,4 @@
+# Credit: [Duy NG](!https://github.com/tduyng)
 # My Neovim config
 
 > Fast, IDE-grade Neovim setup with 20 plugins using native `vim.pack` (no plugin manager needed)
@@ -37,7 +38,6 @@
 - Session manager - Per-directory auto-save/restore
 - LSP utilities - Unified setup helpers
 
-I also wrote a series of articles about my [Neovim config](https://tduyng.com/tags/neovim/)
 
 ## Installation
 
@@ -46,7 +46,7 @@ I also wrote a series of articles about my [Neovim config](https://tduyng.com/ta
 mv ~/.config/nvim ~/.config/nvim.bak
 
 # Clone
-git clone https://gitlab.com/tduyng/nvim.git ~/.config/nvim
+git clone https://gitlab.com/prashanthshetty/nvim12.git ~/.config/nvim
 
 # Launch (plugins install automatically)
 nvim
