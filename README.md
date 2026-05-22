@@ -121,7 +121,7 @@ A lot of keymaps as in [Lazyvim/keymaps](https://www.lazyvim.org/keymaps).
 
 ## Screenshots
 
-![Lua Development](docs/images/lua.png)
+![Lua Development](docs/images/golang.png)
 
 ![Markdown Preview](docs/images/markdown.png)
 
