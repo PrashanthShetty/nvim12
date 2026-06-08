@@ -84,6 +84,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				})
 			end
 
+			if client:supports_method("textDocument/documentHighlight") then
+				local group = augroup("lsp_highlight_" .. buf)
+
+				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+					buffer = buf,
+					group = group,
+					callback = vim.lsp.buf.document_highlight,
+				})
+
+				vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+					buffer = buf,
+					group = group,
+					callback = vim.lsp.buf.clear_references,
+				})
+			end
+
 			for _, km in ipairs(default_keymaps) do
 				-- Only bind if there's no `has` requirement, or the server supports it
 				if not km.has or client.server_capabilities[km.has] then
@@ -103,15 +119,16 @@ local ts_server = vim.g.lsp_typescript_server or "vtsls"
 
 -- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
-	ts_server,
+	"vtsls",
 	"oxlint", -- Priority linter
 	"eslint", -- Fallback linter
 	"lua_ls",
 	"gopls",
 	-- "rust_analyser",
 	"zls",
-	-- "cssls",
-	-- "html",
+	"cssls",
+	"html",
+	"tailwindcss",
 	-- "helm_ls",
 	"jsonls",
 	"biome",

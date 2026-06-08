@@ -61,6 +61,41 @@ require("gitsigns").setup({
 			gs.nav_hunk("first")
 		end, "First Hunk")
 
+		map({ "n", "v" }, "<leader>gy", function()
+			local remote = vim.fn.system("git remote get-url origin"):gsub("\n", "")
+			if remote == "" then
+				vim.notify("No git remote found", vim.log.levels.WARN)
+				return
+			end
+			remote = remote:gsub("git@(.-):(.*).git", "https://%1/%2")
+			remote = remote:gsub("%.git$", "")
+			local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD"):gsub("\n", "")
+			local root =
+				vim.fn.system("git rev-parse --show-toplevel"):gsub("\n", "print(vim.inspect(gs.toggle_current_line_blame))")
+			local file = vim.api.nvim_buf_get_name(0):gsub(root .. "/", "")
+			local line1, line2
+			local mode = vim.fn.mode()
+			if mode == "v" or mode == "V" then
+				line1 = vim.fn.line("v")
+				line2 = vim.fn.line(".")
+				if line1 > line2 then
+					line1, line2 = line2, line1
+				end
+			else
+				line1 = vim.fn.line(".")
+				line2 = line1
+			end
+			local url
+			if line1 == line2 then
+				url = remote .. "/-/blob/" .. branch .. "/" .. file .. "#L" .. line1
+			else
+				url = remote .. "/-/blob/" .. branch .. "/" .. file .. "#L" .. line1 .. "-L" .. line2
+			end
+			vim.fn.setreg("+", url)
+			vim.notify("Copied: " .. url, vim.log.levels.INFO)
+		end, "Copy Git Link")
+
+		-- map({ "n", "v" }, "<leader>gy", ":Gitsigns get_current_line_url<CR>", "Copy Git Link")
 		map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
 		map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
 		map("n", "<leader>gv", gs.toggle_current_line_blame, "Toggle line blame")

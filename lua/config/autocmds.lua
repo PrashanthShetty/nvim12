@@ -208,3 +208,62 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.expandtab = false -- Go uses real tabs
 	end,
 })
+
+local original_tmux_name = nil
+
+vim.api.nvim_create_autocmd({ "BufEnter", "DirChanged" }, {
+	callback = function()
+		local current_name = vim.fn.system("tmux display-message -p '#W'"):gsub("\n", "")
+		if current_name ~= "zsh" then
+			return
+		end
+
+		-- save original name before we rename for the first time
+		if original_tmux_name == nil then
+			original_tmux_name = current_name
+		end
+
+		local name
+		-- if current buffer is a directory, use that directory name
+		if vim.fn.isdirectory(vim.fn.expand("%")) == 1 then
+			name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+		else
+			name = vim.fn.expand("%:t") -- filename
+		end
+
+		if name == "" then
+			name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") -- fallback to folder name
+		end
+		-- rename the tmux window
+		vim.fn.system("tmux rename-window '" .. name .. "'")
+	end,
+})
+
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--   callback = function()
+--     -- reset to current shell working directory folder name
+--     local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+--     vim.fn.system("tmux rename-window '" .. cwd .. "'")
+--     -- then re-enable auto-rename so it updates as you cd around
+--     vim.fn.system("tmux set-window-option automatic-rename on")
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd("VimLeave", {
+	callback = function()
+		-- local shell = vim.fn.fnamemodify(vim.env.SHELL, ":t") -- e.g. "zsh"
+		-- vim.fn.system("tmux rename-window '" .. shell .. "'")
+		-- vim.fn.system("tmux set-window-option automatic-rename on")
+		if original_tmux_name then
+			vim.fn.system("tmux rename-window '" .. original_tmux_name .. "'")
+		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { fg = "#646A76" })
+		vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#3d4450" })
+	end,
+})

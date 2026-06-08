@@ -5,6 +5,6 @@ vim.pack.add({
 require("pretty_hover").setup({
 	line = {
 		detect = { "[\\@]brief" },
-		styler = "#c0c0c0",
+		styler = "#81A1C1",
 	},
 })
